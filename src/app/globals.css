@@ -1,33 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.fade-in-modal {
+  animation: fade-in-animation 400ms ease-in-out forwards;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.fade-in-content {
+  animation: fade-in-animation 700ms ease-in-out forwards;
+}
+.Toastify__progress-bar {
+  background: white !important;
+  opacity: 1 !important;
+  filter: brightness(1.2);
+}
+.Toastify__toast-container {
+  left: 47.5% !important;
+  transform: translateX(-50%) !important;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100vw);
+}
+100% {
+    transform: translateX(0);
+}
+}
+.slide-in-content{
+  animation: slideIn 500ms forwards ease-out;
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(100vw);
+}
+100% {
+    transform: translateX(0);
+}
+}
+.slide-out-content{
+  animation: slideOut 500ms forwards ease-out;
 }
