@@ -27,18 +27,29 @@
 }
 @keyframes slideIn {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
 }
 100% {
     transform: translateX(0);
 }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100vw);
+}
+100% {
+    transform: translateY(0);
+}
+}
+.slide-down-content{
+  animation: slideDown 500ms forwards ease-out;
 }
 .slide-in-content{
   animation: slideIn 500ms forwards ease-out;
 }
 @keyframes slideOut {
   0% {
-    transform: translateX(100vw);
+    transform: translateX(-100vw);
 }
 100% {
     transform: translateX(0);

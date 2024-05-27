@@ -11,7 +11,7 @@ const currentRunArray: any[] = []
 const main = () => {
 	const [tab, setTab] = useState('Generate')
 	const [deviation, setDeviation] = useState('25')
-	const [randomNumber, setRandomNumber] = useState("↓")
+	const [randomNumber, setRandomNumber] = useState("?")
 	const [run, setRun] = useState(0)
 	const [displayTarget, setDisplayTarget] = useState(0)
 	const [wicket, setWicket] = useState(0)
@@ -20,8 +20,14 @@ const main = () => {
 	const [reqRuns, setReqRuns] = useState("-")
 	const [resultModal, setResultModal] = useState(false)
 	const [bowler, setBowler] = useState("")
-	const princeArray = ["Don't you ever dare to repeat '3',", "Prince's grip is tight as a virgin pussy!", "Bro you got this, smash Prince with your peculiar guess ✨."]
-	const anistoArray = ["🐄🔊 Moooooooo !","You are gonna nail it, get ready to pack his ass up ✨","'Asking a cow to dance is not wise'🕺"]
+	const princeArray = ["Oh, the Sen-Sei of Hand Cricket", "Prince's grip is tight as a virgin pussy!", "Bro you got this, smash Prince with your peculiar guess ✨."]
+	const anistoArray = ["🐄🔊 Moooooooo !","You are gonna nail it, get ready to pack his ass up ✨","He's gonna blackmail you!"]
+	const aswinArray = ["He ain't good at it, so be relaxed 🍃","The boy who stole senior's heart ♥","oh, the BOMBSQUAD legend 💣"]
+	const adrinArray = ["10 10 10 10 10","If you ever find any bug in this platform report it to this MF 👨‍💻","You're done bro he's gonna pack you 👿"]
+	const akashArray = ["Don't repeat 0","BOMBSQUAD sidekick 😅","Be carefull he's a cunning fellow in a good way"]
+	const jaswanthArray = ["The entire package of Negative energy 😅","JESUS loves him","Bro loves Semen(Seeman), Alan"]
+	const bibinArray = ["He pours immense amount of oil on flame! 🔥","The man of responsibilities","Oh Feeling Proud Indian Army 🎶🎶🎶"]
+	const rodalfArray = ["கொமோடோ டிராகன் - உடும்பு","Bro's good at it so be carefull","Bro owns குளச்சல்"]
 	function getRandomNumber() {
 		const randomNumber = Math.floor(Math.random() * 7)
 		setRandomNumber(randomNumber.toString())
@@ -72,8 +78,26 @@ const main = () => {
 		if (name.toLowerCase() == "prince") {
 			description = princeArray[randIndex]
 		}
-		if (name.toLowerCase() == "anisto") {
+		else if (name.toLowerCase() == "anisto") {
 			description = anistoArray[randIndex]
+		}
+		else if (name.toLowerCase() == "aswin") {
+			description = aswinArray[randIndex]
+		}
+		else if (name.toLowerCase() == "adrin") {
+			description = adrinArray[randIndex]
+		}
+		else if (name.toLowerCase() == "akash") {
+			description = akashArray[randIndex]
+		}
+		else if (name.toLowerCase() == "jaswanth") {
+			description = jaswanthArray[randIndex]
+		}
+		else if (name.toLowerCase() == "bibin") {
+			description = bibinArray[randIndex]
+		}
+		else if (name.toLowerCase() == "rodalf") {
+			description = rodalfArray[randIndex]
 		}
 		else if (name == "") {
 			description = "Nigga, type something!"
@@ -97,13 +121,13 @@ const main = () => {
 	return (
 		<div className='bg-black h-screen w-screen md:min-h-screen sm:inset-0 sm:fixed sm:overflow-hidden flex flex-col font-josefin relative'>
 			<div className='relative flex flex-row w-screen justify-center items-center mt-[20px] font-semibold'>
-				<div className={`${tab == 'Generate' ? "bg-[#EC364F]" : "bg-transparent"} w-[160px] h-[50px] rounded-l-full flex flex-row justify-center items-center border-solid border-[2px] border-[#EC364F] border-r-[1px] transition-all duration-500`} onClick={() => {
+				<div className={`${tab == 'Generate' ? "bg-[#EC364F]" : "bg-transparent"} w-[160px] h-[50px] rounded-l-full flex flex-row justify-center items-center border-solid border-[2px] border-[#EC364F] border-r-[1px] transition-all duration-500 slide-down-content`} onClick={() => {
 					setTab('Generate')
 				}}>
 					<AutoAwesomeIcon className='text-white mr-[5px]' />
 					<h1 className='text-[20px] text-white pt-[4px]'>Generate</h1>
 				</div>
-				<div className={`${tab == 'Counter' ? "bg-[#EC364F]" : "bg-transparent"} w-[160px] h-[50px] rounded-r-full flex flex-row justify-center items-center border-solid border-[2px] border-[#EC364F] transition-all border-r-[1px]`} onClick={() => {
+				<div className={`${tab == 'Counter' ? "bg-[#EC364F]" : "bg-transparent"} w-[160px] h-[50px] rounded-r-full flex flex-row justify-center items-center border-solid border-[2px] border-[#EC364F] transition-all border-r-[1px] slide-down-content`} onClick={() => {
 					setTab('Counter')
 				}}>
 					<CalculateIcon className='text-white mr-[5px]' />
@@ -143,11 +167,11 @@ const main = () => {
 						</div>
 					</div>
 					<div className='flex flex-row justify-center items-center mt-[30px] relative slide-out-content'>
-						<input type="text" className='w-[230px] border-solid border-[2px] border-[#EC364F] rounded-l-full rounded-r-full py-[12px] bg-transparent text-white text-[16px] font-semibold focus:outline-none px-[15px] z-10'
+						<input autoComplete='off' type="text" className='w-[230px] border-solid border-[2px] border-[#EC364F] rounded-l-full rounded-r-full py-[12px] bg-transparent text-white text-[16px] font-semibold focus:outline-none px-[15px] z-10'
 							value={bowler}
 							onChange={(e) => {
 								setBowler(e.target.value);
-							}} />
+							}}/>
 						{bowler == "" ? <h1 className='text-[15px] text-gray-500 absolute left-[14%] mt-[5px] z-0'>Who is the Bowler?</h1> : null}
 						<div className='w-[50px] h-[50px] bg-[#EC364F] rounded-full ml-[13px] flex flex-col justify-center items-center'>
 							<SendIcon className='text-white' onClick={() => {
